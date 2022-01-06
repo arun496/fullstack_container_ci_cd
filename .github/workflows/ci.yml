@@ -16,7 +16,8 @@ jobs:
         run: |
             ls
             pwd
-            docker build -t arun496/react-frontend -f /home/runner/work/fullstack_container_ci_cd/fullstack_container_ci_cd/frontend/Dockerfile.dev .
+            cd /home/runner/work/fullstack_container_ci_cd/fullstack_container_ci_cd/frontend/
+            docker build -t arun496/react-frontend -f Dockerfile.dev .
 
       - name: Push image to Docker Hub
         run: docker push arun496/react-frontend
