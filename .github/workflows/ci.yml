@@ -1,0 +1,30 @@
+# name: CI of Container
+
+# on:
+#   push:
+#     branches: [ "main" ]
+
+# jobs:
+#   build_and_push:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
+      
+#       - name: Build container image
+#         run: docker build -t arun496/react-frontend -f Dockerfile.digoc .
+
+#       - name: Push image to Docker Hub
+#         run: docker push arun496/react-frontend
+  
+#   deploy:
+#     runs-on: ubuntu-latest
+#     needs: build_and_push
+#     steps:
+#       - name: Deploy to a Droplet
+#         uses: appleboy/ssh-action@master
+#         with:
+#           host: ${{ secrets.HOST }}
+#           username: ${{ secrets.USERNAME }}
+#           key: ${{ secrets.SSHKEY }}
+          
