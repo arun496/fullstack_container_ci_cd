@@ -12,17 +12,18 @@ jobs:
         uses: actions/checkout@v2
       
       - name: Build container image
-        run: docker build -t arun496/react-frontend -f /home/runner/work/fullstack_container_ci_cd/fullstack_container_ci_cd/Dockerfile.digoc .
+        # run: docker build -t arun496/react-frontend -f /home/runner/work/fullstack_container_ci_cd/fullstack_container_ci_cd/frontend/Dockerfile.digoc .
+        run: ls
 
       - name: Push image to Docker Hub
         run: docker push arun496/react-frontend
   
-  deploy:
-    runs-on: self-hosted
-    needs: build_and_push
-    steps:
-      - name: Test self-hosted
-        run: echo ${{ secrets.hello }} > /hello.txt
+  # deploy:
+  #   runs-on: self-hosted
+  #   needs: build_and_push
+  #   steps:
+  #     - name: Test self-hosted
+  #       run: echo ${{ secrets.hello }} > /hello.txt
     # steps:
     #   - name: Deploy to a Droplet
     #     uses: appleboy/ssh-action@master
