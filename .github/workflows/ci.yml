@@ -10,6 +10,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+        - name: Login to Docker hub
+          uses: docker/login-action@v1
+          with:
+            username: ${{ secrets.DOCKERHUB_USERNAME }}
+            password: ${{ secrets.DOCKERHUB_TOKEN }}
       
       - name: Build container image
         # run: docker build -t arun496/react-frontend -f /home/runner/work/fullstack_container_ci_cd/fullstack_container_ci_cd/frontend/Dockerfile.dev .
