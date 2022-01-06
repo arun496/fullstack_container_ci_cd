@@ -13,8 +13,9 @@ jobs:
       
       - name: Build container image
         # run: docker build -t arun496/react-frontend -f /home/runner/work/fullstack_container_ci_cd/fullstack_container_ci_cd/frontend/Dockerfile.digoc .
-        run: ls
-        run: pwd
+        run: |
+            ls
+            pwd
 
       # - name: Push image to Docker Hub
       #   run: docker push arun496/react-frontend
