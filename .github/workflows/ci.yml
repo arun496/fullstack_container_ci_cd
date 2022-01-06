@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
       
       - name: Build container image
-        run: docker build -t arun496/react-frontend -f Dockerfile.digoc .
+        run: docker build -t arun496/react-frontend -f /home/runner/work/fullstack_container_ci_cd/fullstack_container_ci_cd/Dockerfile.digoc .
 
       - name: Push image to Docker Hub
         run: docker push arun496/react-frontend
